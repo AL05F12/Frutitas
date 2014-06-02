@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+               
+        
+        <link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet">
+        <link href="css/Frutas.min.css" rel="stylesheet" href="css/mi estilo.css">
+
+    
+    <style>
+	
+
+	
+	
+	
+  .panel-content {
+    padding: 1em;
+  }
+
+
+
+  #vista
+  {
+	  position:absolute;
+	  left:30%;
+
+  }
+  
+  
+  #logo
+  {
+	  position:absolute;
+	  top:84px;
+	  left:10%;
+  }
+
+#vista img {
+    -webkit-transition:1s;
+			  opacity: 0;  
+}
+#vista img.clicked{
+     opacity:1.0;
+ }
+  
+  
+  #logo img {
+    -webkit-transition:1s;
+}
+#logo img.clicked{
+     opacity:0;
+ }
+
+  
+  </style>
+    
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/acciones.js"></script> 
+     <script src="phonegap.js"></script>            
+        
+
+
+
+
+        
+        <!-- necesario*/ -->
+    <script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+    </script>
+    </head>
+    
+    <body onLoad="MM_preloadImages('imagenes/berenjenas.jpg','imagenes/cebolla.jpg')">
+
+     
+
+           
+
+    
+
+
+
+    
+        <div data-role="page" id="principal" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1>Frutas Y Verduras</h1>
+        <div align="center">
+        <a href="#defaultpanel" data-role="button" data-icon="myapp-man" data-iconpos="notext" data-inline="true">Menú</a>
+        </div>   
+        
+	</div>
+    
+
+
+     
+	<div data-role="content">	
+     <div style="margin: 0 auto 0 auto; width:70%; height:80%;" align="justify">
+      <p> En esta aplicacion podras encontrar toda la informacion mas esecial sobre estos productos provenientes de la naturalesa, lo cual sera de mucha ayuda para que puyedas cuidarte y estar ¡ SANO !
+      </p>
+      <div align="center">
+<img src="imagenes/Frutas_image.png" width="363" height="264">
+</div>
+     </div>
+	</div>
+    
+	<div data-role="footer" data-position="fixed">
+<h4> Pastor Cisneros Armenta </h4>
+	</div>
+    
+<!-- Panel Menu  -->
+  <div data-role="panel" id="defaultpanel" data-theme="a" data-display="overlay">
+ 
+    <div class="panel-content" align="center">
+      <h3>Menú</h3>
+
+<img src="imagenes/Frutero.png" width="170" height="74">
+<div data-role="controlgroup">
+<a data-role="button" id="B_Ini">Inicio Principal </a>
+<a data-role="button" id="B_Tem">Temporadas</a> 
+<a data-role="button" id="B_Pag"> Como son las frutas </a>
+<a data-role="button" id="B_Sab"> Sabias Que ?! </a>
+<a data-role="button" id="B_Ace">Acerca de </a>
+
+
+
+
+</div>
+
+      <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Cerrar</a>
+    </div><!-- /contenido del panel-->
+  </div><!-- /panel de menu -->
+    
+    
+</div>
+
+<div data-role="page" id="Rex" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1>Temporadas </h1>
+                <div align="center">
+       <a href="#defaultpanel" data-role="button" data-icon="myapp-man" data-iconpos="notext" data-inline="true">Menú</a>
+        </div>   
+	</div>
+	
+    <div data-role="content">	
+    <div align="center">
+   
+   <h2> Frutas </h2>
+
+<table border="4" align=center bgcolor="#E73434"
+<tr>
+         <th> Frutas </th>
+         <th> 01 </th>
+         <th> 02 </th>
+          <th> 03 </th>
+         <th> 04</th>
+          <th> 05 </th>
+         <th> 06 </th>
+          <th> 07 </th>
+         <th> 08 </th>
+          <th> 09 </th>
+         <th> 10</th>
+          <th> 11 </th>
+         <th> 12 </th>
+ 
+</tr>
+
+  
+
+
+        <tr>
+          <ol>
+         <td>   <li> Aguacate </li> </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>           </td>
+          </ol>
+       </tr>
+
+             <tr>
+          <ol>
+         <td>   <li> Durazno </li> </td>
+          <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>        Si   </td>
+         <td>     Si  </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+               </ol>
+       </tr>
+
+       <tr>
+          <ol>
+         <td>   <li> Cereza </li> </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>           </td>
+         <td>       </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+     
+         
+          </ol>
+       </tr>
+  
+
+
+   <tr>
+          <ol>
+         <td>   <li> Ciruela </li> </td>
+              <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>       Si    </td>
+         <td>      Si </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+          </ol>
+      </tr>
+
+  <tr>
+          <ol>
+         <td>   <li> Coco </li> </td>
+              <td>     Si              </td>
+         <td>            Si </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>          Si </td>
+         <td>   Si    </td>
+         <td>     Si      </td>
+         <td>      Si  </td>
+         <td>       Si    </td>
+          </ol>
+      </tr>
+
+        <tr>
+          <ol>
+         <td>   <li> Fresa </li> </td>
+      <td>              Si     </td>
+         <td>    Si       </td>
+         <td>      Si             </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>       </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+          </ol>
+       </tr>
+
+
+        <tr>
+          <ol>
+         <td>   <li> Granada </li> </td>
+      <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>            </td>
+         <td>    Si   </td>
+         <td>      Si     </td>
+         <td>    Si    </td>
+         <td>  Si         </td>
+     </ol>
+
+        <tr>
+          <ol>
+         <td>   <li> Limon </li> </td>
+      <td>       Si            </td>
+         <td>      Si     </td>
+         <td>        Si           </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>       </td>
+         <td>       Si    </td>
+         <td>     Si   </td>
+         <td>   Si        </td>
+       </ol>
+       </tr>
+
+
+  <tr>
+          <ol>
+         <td>   <li> Mandarina </li> </td>
+      <td>                   </td>
+         <td>           </td>
+         <td>       Si            </td>
+         <td>       Si    </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>       </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+       </ol>
+      </tr>     
+
+
+  <tr>
+          <ol>
+         <td>   <li> Nispero </li> </td>
+          <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>           </td>
+         <td>       </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+          </ol>
+      </tr>  
+
+  <tr>
+          <ol>
+         <td>   <li> Mango </li> </td>
+       <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>       </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+          </ol>
+      </tr>  
+
+  <tr>
+          <ol>
+         <td>   <li> Manzana </li> </td>
+          <td>         Si          </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>       </td>
+         <td>     Si      </td>
+         <td>    Si    </td>
+         <td>    Si       </td>
+          </ol>
+      </tr>  
+
+
+
+
+
+</table>
+ 
+    </div>
+    
+	
+    </div>
+    
+    
+    <div data-role="content">	
+    <div align="center">
+   
+   <h2> Verduras </h2>
+
+<table border="4" align=center bgcolor="#E73434"
+<tr>
+         <th> Verduras </th>
+         <th> 01 </th>
+         <th> 02 </th>
+          <th> 03 </th>
+         <th> 04</th>
+          <th> 05 </th>
+         <th> 06 </th>
+          <th> 07 </th>
+         <th> 08 </th>
+          <th> 09 </th>
+         <th> 10</th>
+          <th> 11 </th>
+         <th> 12 </th>
+ 
+</tr>
+
+  
+
+
+        <tr>
+          <ol>
+         <td>   <li> Acelga </li> </td>
+         <td>        Si           </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>          Si </td>
+          </ol>
+       </tr>
+
+             <tr>
+          <ol>
+         <td>   <li> Ajo </li> </td>
+          <td>         Si          </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>        Si   </td>
+         <td>     Si  </td>
+         <td>      Si     </td>
+         <td>      Si  </td>
+         <td>        Si   </td>
+               </ol>
+       </tr>
+
+       <tr>
+          <ol>
+         <td>   <li> Brocoli </li> </td>
+         <td>         Si          </td>
+         <td>        Si   </td>
+         <td>      Si             </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>     Si  </td>
+         <td>       Si    </td>
+         <td>    Si    </td>
+         <td>      Si     </td>
+     
+         
+          </ol>
+       </tr>
+  
+
+
+   <tr>
+          <ol>
+         <td>   <li> Cebolla </li> </td>
+              <td>      Si             </td>
+         <td>        Si   </td>
+         <td>         Si          </td>
+         <td>        Si   </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>       Si    </td>
+         <td>      Si </td>
+         <td>     Si      </td>
+         <td>     Si   </td>
+         <td>      Si     </td>
+          </ol>
+      </tr>
+
+  <tr>
+          <ol>
+         <td>   <li> Coliflor </li> </td>
+              <td>     Si              </td>
+         <td>            Si </td>
+         <td>           Si        </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>   Si    </td>
+         <td>     Si      </td>
+         <td>      Si  </td>
+         <td>       Si    </td>
+          </ol>
+      </tr>
+
+        <tr>
+          <ol>
+         <td>   <li> Chicharo </li> </td>
+      <td>              Si     </td>
+         <td>    Si       </td>
+         <td>      Si             </td>
+         <td>          Si </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>           </td>
+         <td>   Si    </td>
+         <td>           </td>
+         <td>      Si  </td>
+         <td>         Si  </td>
+          </ol>
+       </tr>
+
+
+        <tr>
+          <ol>
+         <td>   <li> Lechuga </li> </td>
+      <td>         Si          </td>
+         <td>      Si     </td>
+         <td>      Si             </td>
+         <td>      Si     </td>
+         <td>      Si             </td>
+         <td>       Si    </td>
+         <td>        Si           </td>
+         <td>        Si    </td>
+         <td>    Si   </td>
+         <td>      Si     </td>
+         <td>    Si    </td>
+         <td>  Si         </td>
+
+     </ol>
+
+        <tr>
+          <ol>
+         <td>   <li> Pepino </li> </td>
+      <td>       Si            </td>
+         <td>      Si     </td>
+         <td>        Si           </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>         Si          </td>
+         <td>          Si </td>
+         <td>  Si     </td>
+         <td>       Si    </td>
+         <td>     Si   </td>
+         <td>   Si        </td>
+       </ol>
+       </tr>
+
+
+  <tr>
+          <ol>
+         <td>   <li> Tomate </li> </td>
+      <td>    Si               </td>
+         <td>    Si       </td>
+         <td>       Si            </td>
+         <td>       Si    </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>   Si    </td>
+         <td>    Si       </td>
+         <td>     Si   </td>
+         <td>      Si     </td>
+       </ol>
+      </tr>     
+
+
+  <tr>
+          <ol>
+         <td>   <li> Zanahoria </li> </td>
+          <td>   Si                </td>
+         <td>     Si      </td>
+         <td>       Si            </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>       Si    </td>
+         <td>    Si   </td>
+         <td>     Si      </td>
+         <td>      Si  </td>
+         <td>       Si    </td>
+          </ol>
+      </tr>  
+
+  <tr>
+          <ol>
+         <td>   <li> Tomate Verde </li> </td>
+       <td>                   </td>
+         <td>           </td>
+         <td>                   </td>
+         <td>          Si </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>        Si           </td>
+         <td>         Si  </td>
+         <td>     Si  </td>
+         <td>           </td>
+         <td>        </td>
+         <td>           </td>
+          </ol>
+      </tr>  
+
+  <tr>
+          <ol>
+         <td>   <li> Elote </li> </td>
+          <td>         Si          </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>       Si    </td>
+         <td>         Si          </td>
+         <td>       Si    </td>
+         <td>    Si   </td>
+         <td>     Si      </td>
+         <td>        </td>
+         <td>          </td>
+          </ol>
+      </tr>  
+
+
+
+
+
+</table>
+ 
+    </div>
+    
+	
+    </div>
+    
+	<div data-role="footer" data-position="fixed">
+<h4> Pastor Cisneros Armenta </h4>
+		
+	</div>
+     <div data-role="panel" id="defaultpanel" data-theme="a" data-display="overlay">
+ 
+    <div class="panel-content" align="center">
+      <h3>Menú</h3>
+
+<img src="imagenes/Frutero.png" width="170" height="74">
+<div data-role="controlgroup">
+<a data-role="button" id="B_Inic">Inicio Principal </a>
+<a data-role="button" id="B_Temp">Temporadas</a> 
+<a data-role="button" id="B_Pagi"> Como son las frutas </a>
+<a data-role="button" id="B_Sabi"> Sabias Que ?! </a>
+<a data-role="button" id="B_Acer">Acerca de </a>
+
+
+
+
+</div>
+
+      <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Cerrar</a>
+    </div><!-- /contenido del panel-->
+  </div>
+    
+</div>
+
+
+
+
+<div data-role="page" id="Pag" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1> Como son las frutas </h1>
+                <div align="center">
+         <a href="#defaultpanel" data-role="button" data-icon="myapp-man" data-iconpos="notext" data-inline="true">Menú</a>
+        </div>   
+	</div>
+	
+    <div data-role="content">	
+    <div align="center">
+    
+      <a href="#" id="B_Vibrar" onClick="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image13','','imagenes/cebolla.jpg',1)"><img src="imagenes/berenjenas.jpg" width="300" height="300" id="Image13"></a> </div>
+    </div>
+  
+    
+    
+    
+  
+    
+    
+  <div data-role="footer" data-position="fixed">
+   
+   <h4> Pastor Cisneros Armenta </h4>
+		
+	</div>
+    
+    <div data-role="panel" id="defaultpanel" data-theme="a" data-display="overlay">
+ 
+    <div class="panel-content" align="center">
+      <h3>Menú</h3>
+
+<img src="imagenes/Frutero.png" width="170" height="74">
+<div data-role="controlgroup">
+<a data-role="button" id="B_Inici">Inicio Principal </a>
+<a data-role="button" id="B_Tempo">Temporadas</a> 
+<a data-role="button" id="B_Pagin"> Como son las frutas </a>
+<a data-role="button" id="B_Sabia"> Sabias Que ?! </a>
+<a data-role="button" id="B_Acerc">Acerca de </a>
+
+
+
+
+</div>
+
+      <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Cerrar</a>
+    </div><!-- /contenido del panel-->
+  </div>
+    
+</div>
+
+
+
+
+
+<div data-role="page" id="Sab" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1> Sabias Que!! </h1>
+                <div align="center">
+         <a href="#defaultpanel" data-role="button" data-icon="myapp-man" data-iconpos="notext" data-inline="true">Menú</a>
+        </div>   
+	</div>
+	
+    <div data-role="content">	
+    <div align="center" >
+   
+        <img class="miniatura" src="Imagenes/berenjenas.jpg" width="200px" >
+        <br>
+        
+        Sabias que Debido a su alto contenido en fibra y sus numerables propiedades depurativas y desintoxicantes, la berenjena es un excelente remedio para bajar de peso de forma rápida además de para reducir la celulitis.
+      </div>
+        
+         
+        <div align="center">
+        <img class="miniatura" src="Imagenes/sandia-1.jpg" width="200px">
+        <br>
+        
+        La cualidad más sobresaliente de la sandía es el importante suministro de líquidos que proporciona al organismo. Por su bajo contenido calórico, es el refresco ideal tras el esfuerzo físico o para combatir los días de calor. Su contenido en vitaminas es moderado, y en cuanto a minerales destaca el contenido en potasio.
+        </div>
+          
+        <div align="center">
+        <img class="miniatura" src="Imagenes/melon FOTO.jpg" width="200px">
+        <br>
+        
+       Si eres consumidor habitual de este producto tienes suerte porque revitaliza y rejuvenece, embellece la piel y el cabello, fortalece los huesos y los dientes, protege las mucosas de todo el organismo, activa las hormonas sexuales y aumenta la libido y mejora el aprovechamiento proteínico. 
+        </div>
+        
+        <div align="center">
+        <img class="miniatura" src="Imagenes/camote.jpg" width="200px" >
+        <br>
+         Sabias que El camote más pesado se encontró en USA, en 1977, con 10.2 kilos.
+        
+        </div>
+        
+        <div align="center">
+        <img class="miniatura" src="Imagenes/zanahoria.jpg" width="200px" >
+        <br>
+        
+        Sabias que la zanahoria te ayuda en tener una mejor vision.
+        </div>
+        
+        <div align="center">
+        <img class="miniatura" src="Imagenes/cebolla.jpg" width="200px" >
+        <br>
+        
+        Sabias que la cebolla un gas que tiene unas particulas miy escandalosas y esta se desarrollan mas este en siembra y eso hace nos lloren los ojos cuando la piquemos
+        </div>
+        
+      
+
+   
+   
+    </div>
+    
+	
+    </div>
+    
+	<div data-role="footer" data-position="fixed">
+   
+   <h4> Pastor Cisneros Armenta </h4>
+
+</div>
+
+    <div data-role="panel" id="defaultpanel" data-theme="a" data-display="overlay">
+ 
+    <div class="panel-content" align="center">
+      <h3>Menú</h3>
+
+<img src="imagenes/Frutero.png" width="170" height="74">
+<div data-role="controlgroup">
+<a data-role="button" id="B_Inicio">Inicio Principal </a>
+<a data-role="button" id="B_Tempor">Temporadas</a> 
+<a data-role="button" id="B_Pagina"> Como son las frutas </a>
+<a data-role="button" id="B_Sabias"> Sabias Que ?! </a>
+<a data-role="button" id="B_Acerca">Acerca de </a>
+
+
+
+
+</div>
+
+      <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true">Cerrar</a>
+    </div><!-- /contenido del panel-->
+  </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="Ace" data-theme="a">
+	<div data-role="header" data-position="fixed">
+		<h1>Acerca de !</h1>
+                <div align="center">
+        <a href="#principal" data-role="button" data-icon="home" data-iconpos="notext" data-inline="true">Menú</a>
+        </div>   
+	</div>
+	
+    <div data-role="content">	
+    <div align="center" >
+    <p>  
+    Desarrollador:
+<h1> PACA </h1>
+Sitio web Office
+Información general
+Última versión estable	14.0.6123.5005 (SP1)
+21 de Mayo de 2014
+<br>
+Última versión en pruebas	15.0.4128.1014
+23 de junio de 2014
+<br>
+Género	Procesador de textos
+Sistema operativo	Pastores
+Licencia	PACA CLUF (EULA)
+<br>
+En español
+<br>
+Proyecto: Frutas Y Verduras
+<br>
+     </p>
+     <div align="center">
+   <img src="imagenes/sano1.png" width="382" height="300">
+   </div>
+    </div>
+    
+	
+    </div>
+    
+	<div data-role="footer" data-position="fixed">
+   
+   <h4> Pastor Cisneros Armenta </h4>
+
+
+		
+	</div>
+</div>
+
+
+
+</body>
+
+</html>
